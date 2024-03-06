@@ -14,6 +14,11 @@ COPY . .
 WORKDIR "/src/app"
 RUN dotnet build "app.csproj" -c $configuration -o /app/build
 
+# Run migrations
+# RUN dotnet tool install --global dotnet-ef
+# ENV PATH="$PATH:/root/.dotnet/tools"
+# RUN dotnet-ef database update
+
 FROM build AS publish
 ARG configuration=Release
 RUN dotnet publish "app.csproj" -c $configuration -o /app/publish /p:UseAppHost=false

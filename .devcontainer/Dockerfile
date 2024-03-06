@@ -1,5 +1,18 @@
 FROM mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm
 
+# # Switch to root user
+# USER root
+
+# # Install the ASP.NET Tools
+# RUN dotnet tool install -g dotnet-ef
+# RUN dotnet tool install -g dotnet-aspnet-codegenerator
+
+# # Add the tools directory to the PATH
+# ENV PATH="${PATH}:/root/.dotnet/tools"
+# # ENV PATH="${PATH}:/home/vscode/.dotnet/tools"
+
+# USER vscode
+
 # Install SQL Tools: SQLPackage and sqlcmd
 COPY mssql/installSQLtools.sh installSQLtools.sh
 RUN bash ./installSQLtools.sh \
