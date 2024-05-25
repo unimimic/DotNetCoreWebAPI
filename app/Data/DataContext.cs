@@ -21,5 +21,7 @@ namespace app.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<SteelPlatePattern> SteelPlatePatterns { get; set; }
+
     }
 }
