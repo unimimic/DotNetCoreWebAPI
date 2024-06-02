@@ -29,6 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles(); // Enable static files
 
 app.UseAuthorization();
 
